@@ -86,6 +86,83 @@ body {
   display: none;
 }
 
+/* Search section */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 50rem;
+  height: 5rem;
+  align-items: center;
+  display: flex;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: var(--bg);
+}
+
+.navbar .search-form label {
+  font-size: 1.7rem;
+  margin-right: 1.5rem;
+  color: var(--bg);
+  cursor: pointer;
+}
+
+/* shopping cart section */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  color: var(--bg);
+  background-color: #fff;
+  transition: 0.3s;
+}
+.shopping-cart.active {
+  right: 0;
+}
+.shopping-cart .cart-item {
+  display: flex;
+  padding: 1.2rem 1rem;
+  gap: 1.5rem;
+  align-items: center;
+  border-bottom: 1px dashed #666;
+}
+.shopping-cart img {
+  height: 6rem;
+  border-radius: 15%;
+}
+.shopping-cart .cart-detail h3 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--bg);
+  margin-bottom: 1rem;
+}
+.shopping-cart .cart-detail .item-price {
+  font-size: 1.2rem;
+}
+.shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+.shopping-cart .remove-item i:hover {
+  color: var(--primary);
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -154,7 +231,8 @@ body {
 /* About Section */
 .about,
 .menu,
-.kontak {
+.kontak,
+.product {
   padding: 7rem 7% 2rem;
 }
 
@@ -168,7 +246,8 @@ body {
 
 .about h2 span,
 .menu h2 span,
-.kontak h2 span {
+.kontak h2 span,
+.product h2 span {
   color: var(--primary);
 }
 
@@ -230,6 +309,63 @@ body {
 }
 .menu .row .menu-card .menu-card-title {
   margin: 1rem auto 0.5rem;
+}
+
+/* Product Section */
+.product h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2.6rem;
+}
+.product p {
+  text-align: center;
+  font-weight: 500;
+}
+.product .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.7rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
+.product .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+.product .product-card .product-detail {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.3rem;
+}
+.product .product-card .product-detail a {
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+.product .product-card .product-detail a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.product .product-image {
+  padding: 1rem 0;
+}
+.product .product-image img {
+  height: 25rem;
+}
+.product .product-content h3 {
+  font-size: 1.4rem;
+}
+.product .product-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* Kontak Section */
@@ -358,6 +494,10 @@ footer .created a {
   }
   .navbar .navbar-nav a:hover::after {
     transform: scaleX(0.3);
+  }
+  .navbar .search-form {
+    width: 35rem;
+    height: 6rem;
   }
 
   .about .row {
